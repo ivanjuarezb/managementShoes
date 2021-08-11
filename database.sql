@@ -12,9 +12,7 @@ CREATE  TABLE shoes(
     units        INT(50) NOT NULL,
     price        DECIMAL(4,2) NOT NULL,
     datetime     DATETIME NOT NULL,
-    nameimage    VARCHAR(50) NOT NULL,
     image        LONGBLOB NOT NULL,
-    type         VARCHAR(50) NOT NULL,
 
     CONSTRAINT pk_users PRIMARY KEY(id)
 )ENGINE=InnoDb;
