@@ -11,6 +11,13 @@
         public function index(){
             include_once 'view/home.php';
         }
+
+        public function create(){
+            include_once 'view/create.php';
+        }
+
+        public function save(){
+            
+        }
     }
-    
 ?>

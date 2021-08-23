@@ -40,6 +40,7 @@
                     }
                 ?>
             </table>
+            <a href="?method=create">Nuevo</a>
         </div>
     </body>
 </html>
