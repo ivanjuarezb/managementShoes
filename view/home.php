@@ -23,19 +23,19 @@
                     <th>Imagén</th>
                 </tr>
                 <?php
-                    foreach($this->MODEL->list() as $row){
+                    foreach($this->MODEL->list() as $shoe){
                         echo '<tr>';
-                        echo '<td>'.$row->id.'</td>';
-                        echo '<td>'.$row->name.'</td>';
-                        echo '<td>'.$row->brand.'</td>';
-                        echo '<td>'.$row->gender.'</td>';
-                        echo '<td>'.$row->style.'</td>';
-                        echo '<td>'.$row->color.'</td>';
-                        echo '<td>'.$row->size.'</td>';
-                        echo '<td>'.$row->units.'</td>';
-                        echo '<td>'.$row->price.'</td>';
-                        echo '<td>'.$row->datetime.'</td>';
-                        //echo '<td>'.$row->image.'</td>';
+                        echo '<td>'.$shoe->id.'</td>';
+                        echo '<td>'.$shoe->name.'</td>';
+                        echo '<td>'.$shoe->brand.'</td>';
+                        echo '<td>'.$shoe->gender.'</td>';
+                        echo '<td>'.$shoe->style.'</td>';
+                        echo '<td>'.$shoe->color.'</td>';
+                        echo '<td>'.$shoe->size.'</td>';
+                        echo '<td>'.$shoe->units.'</td>';
+                        echo '<td>'.$shoe->price.'</td>';
+                        echo '<td>'.$shoe->datetime.'</td>';
+                        echo '<td><img src="'.'resources/images/'.$shoe->image.'"/></td>';
                         echo '</tr>';
                     }
                 ?>

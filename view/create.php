@@ -7,7 +7,7 @@
     <body>
         <div id="container">
             <h1>Nuevo zapato</h1>
-            <form method="POST" action="?method=save">
+            <form method="POST" action="?method=save" enctype="multipart/form-data">
                 <p>Nombre<input type="text" name="name"/></p>
                 <p>Marca<input type="text" name="brand"/></p>
                 <p>Genero

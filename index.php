@@ -2,12 +2,14 @@
     include_once 'controller/controller.php';
     include_once 'config/connection.php';
 
-    $Controller = new Controller; 
+    $controller = new Controller; 
 
-    if(!isset($_REQUEST['c'])){
-        $Controller->index();
+    if(!isset($_GET['method'])){
+        $controller->index();
+        $controller = null;
     }else{
-        $action =  $_REQUEST['method'];
-        call_user_func(array($Controller,$action));
+        $action =  $_GET['method'];
+        call_user_func(array($controller,$action));
+        $controller = null;
     }
 ?>

@@ -17,7 +17,8 @@
         }
 
         public function save(){
-            
+            $this->MODEL->insert();
+            header("location: index.php");
         }
     }
 ?>
