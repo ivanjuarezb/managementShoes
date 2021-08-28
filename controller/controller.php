@@ -20,5 +20,11 @@
             $this->MODEL->insert();
             header("location: index.php");
         }
+        public function delete(){
+            $id = $_GET['id'];
+            $nameImage = $_GET['nameImage'];
+            $this->MODEL->eliminate($id,$nameImage);
+            header("location:  index.php");
+        }
     }
 ?>

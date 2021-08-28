@@ -39,7 +39,8 @@
 
             if(move_uploaded_file($route,$destination)){
                 try{
-                    $query = "INSERT INTO shoes (name,brand,gender,style,color,size,units,price,datetime,image) VALUES ('$name','$brand','$gender','$style','$color','$size','$units','$price','$date','$nameImage')"; 
+                    $query = "INSERT INTO shoes (name,brand,gender,style,color,size,units,price,datetime,image) 
+                              VALUES ('$name','$brand','$gender','$style','$color','$size','$units','$price','$date','$nameImage')"; 
                     $data = $this->connect->prepare($query);
                     $data->execute();
                  }catch(Exception $e){
@@ -48,6 +49,23 @@
             }else{
                 echo 'imagen existe';
             }
+        }
+
+        public function eliminate($id, $nameImage){
+            $routeImage = 'resources/images/'.$nameImage;
+            unlink($routeImage);
+            if(!file_exists($routeImage)){
+                try{
+                    $query = "DELETE FROM shoes WHERE id = ".$id.""; 
+                    $data = $this->connect->prepare($query);
+                    $data->execute();
+                }catch(Exception $e){
+                    die($e->getMessage());
+                }
+            }else{
+                echo 'No se pudo eliminar el zapato';
+            }
+                
         }
     }
 ?>

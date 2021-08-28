@@ -11,5 +11,6 @@
         $action =  $_GET['method'];
         call_user_func(array($controller,$action));
         $controller = null;
+        $_GET['method'] = null;
     }
 ?>
