@@ -67,5 +67,38 @@
             }
                 
         }
+
+        public function getShoe ($id){
+            try{
+                $query = "SELECT * FROM shoes where id=".$id;
+                $data  = $this->connect->prepare($query);
+                $data->execute();
+                return $data->fetch(PDO::FETCH_OBJ);
+            }catch(Exception $e){
+                die($e->getMessage());
+            }
+        }
+
+        public function update($id){
+            $name   = $_POST['name'];
+            $brand  = $_POST['brand'];
+            $gender = $_POST['gender'];
+            $style  = $_POST['style'];
+            $color  = $_POST['color'];
+            $size   = $_POST['size'];
+            $units  = $_POST['units'];
+            $price  = $_POST['price'];
+
+            try{
+                $query = "UPDATE shoes 
+                          SET name='$name',brand='$brand',gender='$gender',style='$style',
+                              color='$color',size='$size',units='$units',price='$price' 
+                          WHERE id='$id'"; 
+                $data = $this->connect->prepare($query);
+                $data->execute();
+            }catch(Exception $e){
+                die($e->getMessage());
+            }
+        }
     }
 ?>

@@ -21,6 +21,7 @@
                     <th>Precio</th>
                     <th>Fecha de registro</th>
                     <th>Imagén</th>
+                    <th>Editar</th>
                     <th>Eliminar</th>
                 </tr>
                 <?php
@@ -37,6 +38,7 @@
                         echo '<td>'.$shoe->price.'</td>';
                         echo '<td>'.$shoe->datetime.'</td>';
                         echo '<td><img src="'.'resources/images/'.$shoe->image.'"/></td>';
+                        echo '<td><a href="?method=update&id='.$shoe->id.'">Editar</td>';
                         echo '<td><a href="?method=delete&id='.$shoe->id.'&nameImage='.$shoe->image.'">Eliminar</td>';
                         echo '</tr>';
                     }
